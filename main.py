@@ -6,13 +6,22 @@ from huobi.utils import *
 
 
 class Trading_bot:
-    def __init__(self):
+    def __init__(self, g_api_key, g_secret_key, target_coin="imxusdt", amount=100, price=0.0001):
         # input your acount_id, access_key, secret_key below:
-        self.g_api_key = "your api key"
-        self.g_secret_key = "your api secret key"
-        self.target_coin = "imxusdt"
+        self.g_api_key = g_api_key
+        self.g_secret_key = g_secret_key
+        self.target_coin = target_coin
+        self.amount = amount
+        self.price = price
 
     def __call__(self):
+        print(
+        self.g_api_key,
+        self.g_secret_key,
+        self.target_coin,
+        self.amount,
+        self.price,
+        )
         account_client = AccountClient(
             api_key=self.g_api_key, secret_key=self.g_secret_key
         )
@@ -43,8 +52,8 @@ class Trading_bot:
                     account_id=account_id,
                     order_type=OrderType.BUY_MARKET,
                     source=OrderSource.API,
-                    amount=500000,
-                    price=0.0001,
+                    amount=self.amount,
+                    price=self.price,
                 )
                 LogInfo.output("created order id : {id}".format(id=order_id))
             except Exception as e:
@@ -54,5 +63,5 @@ class Trading_bot:
 
 
 if __name__ == "__main__":
-    run = Trading_bot()
+    run = Trading_bot("your api key", "your api secret key")
     run()
