@@ -28,7 +28,7 @@ Install requirements
 $ pip install -r requirements.txt 
 ```
 
-### Run
+## 2. Run
 ```
 python3 main.py
 ```
