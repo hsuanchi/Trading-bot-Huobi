@@ -8,7 +8,6 @@ from huobi.utils import *
 class Trading_bot:
     def __init__(self):
         # input your acount_id, access_key, secret_key below:
-        self.account_id = "your accountid"
         self.g_api_key = "your api key"
         self.g_secret_key = "your api secret key"
         self.target_coin = "imxusdt"
@@ -27,6 +26,7 @@ class Trading_bot:
                     PrintBasic.print_basic(account_balance_obj.type, "Account Type")
                     PrintBasic.print_basic(account_balance_obj.state, "Account State")
                     PrintBasic.print_basic(account_balance_obj.subtype, "Subtype")
+                    account_id = account_balance_obj.id
                     for balance_obj in account_balance_obj.list:
                         if (
                             float(balance_obj.balance) > 0.1
@@ -40,10 +40,10 @@ class Trading_bot:
             try:
                 order_id = trade_client.create_order(
                     symbol=self.target_coin,
-                    account_id=self.account_id,
+                    account_id=account_id,
                     order_type=OrderType.BUY_MARKET,
                     source=OrderSource.API,
-                    amount=100000,
+                    amount=500000,
                     price=0.0001,
                 )
                 LogInfo.output("created order id : {id}".format(id=order_id))

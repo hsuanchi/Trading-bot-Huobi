@@ -6,7 +6,6 @@
 
 1. input your acount_id, access_key, secret_key below:
 ```
-self.account_id = "your accountid"
 self.g_api_key = "your api key"
 self.g_secret_key = "your api secret key"
 self.target_coin = "imxusdt"
