@@ -1,0 +1,29 @@
+#run{
+    cursor:pointer;
+}
+#app{
+  width:100vw;
+  height:100vh;
+  background-color:black;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+#app h1{
+  margin:0
+}
+#logo{
+  height:200px;
+  width:200px;
+}
+#inputarea{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+body{
+  margin:0;
+}
