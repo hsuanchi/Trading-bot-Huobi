@@ -11,4 +11,4 @@ def run_trade_bot(account_id, api_key, api_secret_key, ammount, price):
     run=Trading_bot(account_id, api_key, api_secret_key, ammount, price)
     run()
 
-eel.start('main.html', size=(600, 400))
+eel.start('main.html', size=(1200, 800))
